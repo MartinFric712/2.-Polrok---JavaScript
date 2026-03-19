@@ -1,27 +1,64 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e0e0e0;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    padding-top: 50px;
 }
 
 .container {
-    background: grey;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
+    background: #333;
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.category-input-group {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
 }
 
 input {
-    width: 70%;
-    padding: 8px;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
 }
 
 button {
     cursor: pointer;
-    padding: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #2ecc71;
+    color: white;
+    font-weight: bold;
+}
+
+.category-card {
+    background: #444;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.delete-cat {
+    background: #e74c3c;
+    padding: 2px 8px;
+    font-size: 12px;
 }
 
 ul {
@@ -30,22 +67,40 @@ ul {
 }
 
 li {
-    padding: 8px;
+    background: #555;
     margin-top: 5px;
-    background: #eee;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
     cursor: pointer;
 }
 
 .done {
     text-decoration: line-through;
-    color: gray;
+    opacity: 0.5;
 }
 
-#error {
-    color: red;
+#error { color: #ff7675; font-size: 14px; }
+
+.hidden {
+    display: none;
 }
 
-#counter {
+.category-title {
+    cursor: pointer;
+    user-select: none; /* Zabraňuje označovaniu textu pri rýchlom klikaní */
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.category-title:hover {
+    color: #2ecc71; /* Zvýraznenie pri prejdení myšou */
+}
+
+.task-input-group {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 14px;
 }
