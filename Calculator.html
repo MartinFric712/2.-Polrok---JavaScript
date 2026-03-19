@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<title>Kalkulačka s históriou</title>
+<script src="Calculator.js"></script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 30px;
+    background: #f0f0f0;
+    gap: 20px; 
+}
+
+.kalkulacka {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#display {
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: right;
+    padding: 0 10px;
+    border-radius: 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+}
+
+.tlacidla {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-auto-rows: 70px;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+button {
+    font-size: 22px;
+    border: none;
+    border-radius: 15px;
+    background: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover { background: #666; }
+button:active { background: #888; }
+
+.button-0 { grid-column: span 3; }
+.button-backspace { grid-column: span 2;}
+
+#history {
+    width: 250px;
+    background: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 15px;
+    max-height: 450px;
+    overflow-y: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#history h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#history ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#history li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="kalkulacka">
+    <input type="text" id="display" readonly>
+
+    <div class="tlacidla">
+        <!-- Prvý riadok -->
+        <button class="button-backspace" onclick="backspace()">⌫</button>
+        <button onclick="clearAll()">C</button>
+        <button onclick="setOperator('+')">+</button>
+
+        <!-- Druhý riadok -->
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button onclick="setOperator('-')">-</button>
+
+        <!-- Tretí riadok -->
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button onclick="setOperator('*')">*</button>
+
+        <!-- Štvrtý riadok -->
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button onclick="setOperator('/')">/</button>
+
+        <!-- Piaty riadok -->
+        <button class="button-0" onclick="addNumber(0)">0</button>
+        <button onclick="calculateResult()">=</button>
+    </div>
+</div>
+
+<!-- História vedľa kalkulačky -->
+<div id="history">
+    <h3>History</h3>
+    <ul id="historyList">
+        <li id="noHistory">No history yet</li>
+    </ul>
+</div>
+
+</body>
+</html>

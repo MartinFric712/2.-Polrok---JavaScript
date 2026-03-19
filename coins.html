@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coins</title>
+    <script src="coins.js"></script>
+</head>
+<body>
+
+    <h1>Detekcia falošnej mince</h1>
+
+    <div>
+        Nastav číslo falošnej mince (1-12): 
+        <input type="number" id="fakeCoinInput" value="7" min="1" max="12">
+        
+        <br><br>
+        
+        Nastav vlastnosť:
+        <select id="isHeavyInput">
+            <option value="true">Ťažšia</option>
+            <option value="false">Ľahšia</option>
+        </select>
+        
+        <br><br>
+        
+        <button onclick="spustiVypocet()">Vykonať váženia</button>
+    </div>
+
+    <hr>
+
+    <h3>Priebeh simulácie:</h3>
+    <pre id="display"></pre>
+    
+</body>
+</html>

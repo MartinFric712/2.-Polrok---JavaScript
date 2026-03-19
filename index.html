@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+</head>
+
+<body>
+
+
+    <button onclick="zadajMeno()" style="margin: 10px; width: 100px; height: 100px;"> zadaj údaje</button>
+
+    <div id="vystup" style="height: 50px; width: 100px; align-content: center; background-color: blue; margin: 10px;">
+    </div>
+
+    <div id="vystup2" style=" align-content: center; margin: 10px; background-color: red; height: 50px; width: 100px;">
+    </div>
+
+</body>
+<script>
+    console.log("Hello from inline script!");
+    function zadajMeno() {
+        const meno = prompt("Zadaj svoje meno:");
+
+        if (meno !== null && meno !== "") {
+            document.getElementById("vystup").textContent = "Ahoj " + meno;
+        }
+
+        const vek = prompt("Zadaj svoj vek:");
+        if (vek !== null && vek !== "") {
+            document.getElementById("vystup2").textContent = "Mas " + vek + " rokov.";
+        }
+    }
+</script>
+
+</html>
